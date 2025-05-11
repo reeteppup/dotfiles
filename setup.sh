@@ -12,9 +12,9 @@ DOTFILES_DIR="$HOME/dotfiles"
 declare -A SYMLINKS=(
   ["$DOTFILES_DIR/nvim"]="$HOME/.config/nvim"
   # Add more entries like:
-  # ["$DOTFILES_DIR/zshrc"]="$HOME/.zshrc"
-  # ["$DOTFILES_DIR/gitconfig"]="$HOME/.gitconfig"
-  # ["$DOTFILES_DIR/hammerspoon"]="$HOME/.hammerspoon"
+  ["$DOTFILES_DIR/zshrc"]="$HOME/.zshrc"
+  ["$DOTFILES_DIR/karabiner"]="$HOME/.config/karabiner"
+  ["$DOTFILES_DIR/hammerspoon"]="$HOME/.hammerspoon"
 )
 
 for src in "${!SYMLINKS[@]}"; do
