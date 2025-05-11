@@ -8,9 +8,6 @@ end)
 -- Focus or launch Ghostty terminal for Neovim
 hs.hotkey.bind(hyper, "e", function()
 	hs.application.launchOrFocus("Ghostty") -- assuming you use Ghostty
-	hs.timer.doAfter(0.2, function()
-		hs.eventtap.keyStroke({ "cmd" }, "1") -- switch to tab 1 (Neovim)
-	end)
 end)
 
 -- Focus or launch PostgreSQL GUI (e.g., TablePlus)
