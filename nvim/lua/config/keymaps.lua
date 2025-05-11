@@ -1,7 +1,6 @@
 -- Keymaps are automatically loaded on the VeryLazy event
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
--- -- Key mappings for buffer switching
 vim.keymap.set("n", "1", ":BufferLineGoToBuffer 1<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "2", ":BufferLineGoToBuffer 2<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "3", ":BufferLineGoToBuffer 3<CR>", { noremap = true, silent = true })
