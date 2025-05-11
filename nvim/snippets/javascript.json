@@ -1,0 +1,239 @@
+{
+  "Print to server console": {
+    "prefix": "logs",
+    "body": [
+      "console.log('\\x1b[33m%s\\x1b[0m', '$1 --------------------', $1);"
+    ],
+    "description": "Log output to server console"
+  },
+  "Print console": {
+    "prefix": "log",
+    "body": ["console.log('$1: ', $1);"],
+    "description": "Log output to server console"
+  },
+  "Promise": {
+    "prefix": "promise",
+    "body": [
+      "new Promise((resolve, reject) => {",
+      "if (!$1?.length > 0) {",
+      "resolve();",
+      "return",
+      "}",
+      "\tlet promiseCount = 0;",
+      "\t$1.forEach(($2) => {",
+      "try {",
+      "\t\t$3",
+      "\t\tpromiseCount++;",
+      "\t\tif (promiseCount == $1.length) resolve();",
+      "} catch (error) {",
+      "reject(new Error(`[Error] in $TM_FILENAME_BASE $4: \\${error}`));",
+      "}",
+      "\t});",
+      "});"
+    ],
+    "description": "Create a promise for a forEach loop"
+  },
+  "TODO": {
+    "prefix": "todo",
+    "body": ["/* <!-- TODO $1 --> */"],
+    "description": "Create a todo comment"
+  },
+  "TODOS": {
+    "prefix": "todos",
+    "body": ["// TODO $1"],
+    "description": "Create a todo comment for server"
+  },
+  "Sort array of objects": {
+    "prefix": ".sortArrayOfObjects",
+    "body": [".sort((a, b) => (a.order > b.order ? 1 : -1));"],
+    "description": "Create a promise for a forEach loop"
+  },
+  ".forEach": {
+    "prefix": ".each",
+    "body": [".forEach($1 => {", "\t$2", "});"]
+  },
+  "JSON": {
+    "prefix": "json",
+    "body": ["JSON.parse(JSON.stringify($0))"],
+    "description": "Create json statement"
+  },
+  "Sleep": {
+    "prefix": "sleep",
+    "body": [
+      "// eslint-disable-next-line no-promise-executor-return",
+      "await new Promise((resolve) => setTimeout(resolve, 1000));"
+    ],
+    "description": "create a sleep for 1 second"
+  },
+  "Vue3": {
+    "prefix": "setup",
+    "body": [
+      "<template>",
+      "<div>",
+      "<MainButton",
+      "v-if=\"systemViewActive\"",
+      "class=\"btn-wide btn-back mt-3 ml-3\":label=\"$t('general.button.back')\"",
+      "@click=\"backToOrganizations\"></MainButton>",
+      "</div>",
+      "</template>",
+      "<script setup>",
+      " //* VUE",
+      "/* import {ref} from 'vue'; */",
+      "",
+      " //* COMPOSABLES",
+      "import { getVariables } from '@/composables/mainVariables';",
+      "",
+      " //* GRAPHQL",
+      "",
+      " //* VUELIDATE",
+      "",
+      " //* CUSTOM",
+      "import { useRouter } from 'vue-router';",
+      "",
+      " //* COMPONENTS",
+      "",
+      " //* CONTROLLERS",
+      "",
+      " //* LOAD INITIAL",
+      " const { systemViewActive, getLocale } = getVariables() ",
+      "const router = useRouter();",
+      "",
+      " //* VARIABLES",
+      "",
+      " //* QUERYS",
+      "",
+      " //* COMPUTED",
+      "",
+      " //* METHODS",
+      "const backToOrganizations = () => router.push(`/${getLocale()}/admin/organization`);",
+      "",
+      " //* MOUNTED",
+      "",
+      " //* CREATED",
+      "",
+      "</script>",
+      "<style lang='scss' scoped>",
+      "@import '@/assets/styles/views/$TM_FILENAME_BASE.scss';",
+      "</style>"
+    ],
+    "description": "Create a full vue 3 setup"
+  },
+  "query": {
+    "prefix": "query",
+    "body": ["await queryInterface.sequelize.query(`$0;`, { transaction })"],
+    "description": "Create a sequelize sql query"
+  },
+  "migration": {
+    "prefix": "migration",
+    "body": [
+      "/** @type {import('sequelize-cli').Migration} */",
+      "module.exports = {",
+      "async up(queryInterface, Sequelize) {",
+      "if (process.env.NODE_ENV === 'local' || process.env.NODE_ENV === 'development') {",
+      "return;",
+      "}",
+      "const transaction = await queryInterface.sequelize.transaction();",
+      "try {",
+      "  return transaction.commit();",
+      "} catch (error) {",
+      "  await transaction.rollback();",
+      "  throw error;",
+      "}",
+      "},",
+      "};"
+    ],
+    "description": "Create a standard migration configuration"
+  },
+  "lorem": {
+    "prefix": "lorem ipsum",
+    "body": [
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,",
+      "molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum",
+      "numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium",
+      "optio, eaque rerum! Provident similique accusantium nemo autem. Veritatis",
+      "obcaecati tenetur iure eius earum ut molestias architecto voluptate aliquam",
+      "nihil, eveniet aliquid culpa officia aut! Impedit sit sunt quaerat, odit,",
+      "tenetur error, harum nesciunt ipsum debitis quas aliquid. Reprehenderit,",
+      "quia. Quo neque error repudiandae fuga? Ipsa laudantium molestias eos ",
+      "sapiente officiis modi at sunt excepturi expedita sint? Sed quibusdam",
+      "recusandae alias error harum maxime adipisci amet laborum. Perspiciatis ",
+      "minima nesciunt dolorem! Officiis iure rerum voluptates a cumque velit ",
+      "quibusdam sed amet tempora. Sit laborum ab, eius fugit doloribus tenetur ",
+      "fugiat, temporibus enim commodi iusto libero magni deleniti quod quam ",
+      "consequuntur! Commodi minima excepturi repudiandae velit hic maxime",
+      "doloremque. Quaerat provident commodi consectetur veniam similique ad ",
+      "earum omnis ipsum saepe, voluptas, hic voluptates pariatur est explicabo ",
+      "fugiat, dolorum eligendi quam cupiditate excepturi mollitia maiores labore ",
+      "suscipit quas? Nulla, placeat. Voluptatem quaerat non architecto ab laudantium",
+      "modi minima sunt esse temporibus sint culpa, recusandae aliquam numquam ",
+      "totam ratione voluptas quod exercitationem fuga. Possimus quis earum veniam ",
+      "quasi aliquam eligendi, placeat qui corporis!"
+    ],
+    "description": "Create lorem ipsum"
+  },
+  "loadingComopnent": {
+    "prefix": "loadingComponent",
+    "body": [
+      "<LoadingComponent :displayLoading='displayLoading' />",
+      "import LoadingComponent from '@/components/LoadingComponent';"
+    ],
+    "description": "Create a standard LoadingComponent"
+  },
+  "toastComponent": {
+    "prefix": "toastComponent",
+    "body": [
+      "<ToastComponent @toastConfirmed='onToastConfirm' />",
+      "const ToastComponent = defineAsyncComponent(() => import('@/components/ToastComponent'));",
+      "import { useToast } from 'primevue/usetoast';",
+      "const toast = useToast();"
+    ],
+    "description": "Import a standard ToastComponent"
+  },
+  "error": {
+    "prefix": "error",
+    "body": ["console.error('[Error] in $TM_FILENAME_BASE $1: ', error);"],
+    "description": "Create a console error"
+  },
+  "try": {
+    "prefix": "try",
+    "body": [
+      "try {",
+      "$2",
+      "} catch(error) {",
+      "console.error('[Error] in $TM_FILENAME_BASE $1: ', error);",
+      "}"
+    ],
+    "description": "create a try catch with console error"
+  },
+  "trys": {
+    "prefix": "trys",
+    "body": [
+      "try {",
+      "$2",
+      "} catch(error) {",
+      "console.error('[Error] in $TM_FILENAME_BASE $1: ', error);",
+      "if (res?.headersSent) return;",
+      "return res.status(500).send({",
+      "status: false,",
+      "code: 500,",
+      "detail: `[Error] in $TM_FILENAME_BASE $1`,",
+      "message: `Internal Server Error`,",
+      "});",
+      "}"
+    ],
+    "description": "create a try catch with console error on server"
+  },
+  "function": {
+    "prefix": "function",
+    "body": [
+      "const $1 = () => {",
+      "try {",
+      "$2",
+      "} catch(error) {",
+      "console.error('[Error] in $TM_FILENAME_BASE $1: ', error);",
+      "}",
+      "}"
+    ],
+    "description": "create a function with try catch block"
+  }
+}
