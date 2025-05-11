@@ -1,0 +1,36 @@
+# Ignore system-specific files
+.DS_Store
+*.swp
+*.swo
+*.swn
+*~
+
+# Ignore SSH keys or private credentials (if accidentally placed)
+*.pem
+*.key
+*.crt
+*.env
+.env.*
+
+# VSCode settings (optional, if you're syncing with settings sync instead)
+.vscode/
+
+# Log files or crash reports
+*.log
+
+# macOS metadata
+.AppleDouble
+.LSOverride
+
+# Backup files
+*.bak
+*.tmp
+
+# Ignore node_modules or vendor folders if you use tools like `neovim` plugins
+node_modules/
+vendor/
+
+# Python virtualenvs (if you happen to keep any in config folders)
+venv/
+__pycache__/
+*.pyc
