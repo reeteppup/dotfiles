@@ -8,7 +8,7 @@ return {
     },
     config = function()
       require("flutter-tools").setup({
-        flutter_path = "/users/alessio/fvm/default/bin/flutter",
+        flutter_path = os.getenv("HOME") .. "/fvm/default/bin/flutter",
         fvm = true,
         lsp = {
           cmd = { "dart", "language-server", "--protocol=lsp" },
