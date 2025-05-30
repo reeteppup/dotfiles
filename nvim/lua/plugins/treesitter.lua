@@ -16,6 +16,7 @@ return {
       "vue",
       "sql",
       "graphql",
+      "regex",
     },
     auto_install = false,
     highlight = {

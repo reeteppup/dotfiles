@@ -126,12 +126,8 @@
   "migration": {
     "prefix": "migration",
     "body": [
-      "/** @type {import('sequelize-cli').Migration} */",
-      "module.exports = {",
-      "async up(queryInterface, Sequelize) {",
-      "if (process.env.NODE_ENV === 'local' || process.env.NODE_ENV === 'development') {",
-      "return;",
-      "}",
+      "const up = async (queryInterface, Sequelize) => {",
+      "if (process.env.NODE_ENV === 'local' || process.env.NODE_ENV === 'development') return;",
       "const transaction = await queryInterface.sequelize.transaction();",
       "try {",
       "  return transaction.commit();",
@@ -139,8 +135,8 @@
       "  await transaction.rollback();",
       "  throw error;",
       "}",
-      "},",
-      "};"
+      "};",
+      "module.exports = { up };"
     ],
     "description": "Create a standard migration configuration"
   },

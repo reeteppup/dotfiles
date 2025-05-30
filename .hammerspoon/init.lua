@@ -12,10 +12,30 @@ end)
 
 -- Focus or launch PostgreSQL GUI (e.g., TablePlus)
 hs.hotkey.bind(hyper, "d", function()
-	hs.application.launchOrFocus("TablePlus") -- or "Postico", etc.
+	hs.application.launchOrFocus("pgAdmin 4") -- or "Postico", etc.
 end)
 
 -- Focus or launch Warp
 hs.hotkey.bind(hyper, "w", function()
 	hs.application.launchOrFocus("Warp")
+end)
+
+-- Focus or launch Visual Studio Code
+hs.hotkey.bind(hyper, "v", function()
+	hs.application.launchOrFocus("Visual Studio Code")
+end)
+
+-- Focus or launch Slack
+hs.hotkey.bind(hyper, "s", function()
+	hs.application.launchOrFocus("Slack")
+end)
+
+-- Focus or launch Notes
+hs.hotkey.bind(hyper, "n", function()
+	hs.application.launchOrFocus("Notes")
+end)
+
+-- Focus or launch Postman
+hs.hotkey.bind(hyper, "p", function()
+	hs.application.launchOrFocus("Postman")
 end)

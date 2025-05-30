@@ -13,6 +13,7 @@ return {
         lsp = {
           cmd = { "dart", "language-server", "--protocol=lsp" },
           settings = {
+            lineLength = 120,
             dart = {
               completefunctioncalls = true,
               renamefileswithclasses = { prompt = true },
