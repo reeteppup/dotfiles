@@ -1,0 +1,16 @@
+return {}
+-- return {
+--   "nvimtools/none-ls.nvim",
+--   event = { "BufReadPre", "BufNewFile" },
+--   config = function()
+--     local null_ls = require("null-ls")
+--     null_ls.setup({
+--       sources = {
+--         -- Enable eslint_d for diagnostics
+--         null_ls.builtins.diagnostics.eslint_d,
+--         -- (Optional) Enable formatting via eslint_d
+--         null_ls.builtins.formatting.eslint_d,
+--       },
+--     })
+--   end,
+-- }

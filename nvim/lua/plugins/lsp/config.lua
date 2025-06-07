@@ -1,4 +1,4 @@
 return {
   "neovim/nvim-lspconfig", -- Install the LSP config
-  "folke/neodev.nvim", -- Optional: Setup for better LSP integration with Neovim
+  "folke/neodev.nvim",
 }

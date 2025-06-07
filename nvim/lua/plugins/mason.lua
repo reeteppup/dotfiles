@@ -9,7 +9,6 @@ return {
       "prettierd",
       "shfmt",
       "stylua",
-      "typescript-language-server",
       "vue-language-server",
     },
   },
