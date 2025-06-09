@@ -10,6 +10,8 @@ return {
       "shfmt",
       "stylua",
       "vue-language-server",
+      "typescript-language-server",
+      "typescript",
     },
   },
   { "mason-org/mason.nvim", version = "^1.0.0" },
