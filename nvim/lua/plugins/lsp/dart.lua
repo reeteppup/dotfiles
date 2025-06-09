@@ -20,9 +20,6 @@ return {
               enablesnippets = false,
               updateimportsonrename = true,
               showtodos = true,
-              inlinehints = {
-                enabled = false,
-              },
             },
           },
         },
