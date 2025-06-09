@@ -3,3 +3,5 @@
 -- Add any additional options here
 vim.opt.spell = true
 vim.opt.spelllang = { "en" }
+vim.opt.relativenumber = false
+vim.lsp.inlay_hint.enable = false
