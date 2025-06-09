@@ -1,6 +1,7 @@
 return {
   "stevearc/conform.nvim",
   opts = {
+
     formatters_by_ft = {
       javascript = { "prettierd" }, -- Prettier for formatting
       typescript = { "prettierd" },
@@ -9,6 +10,7 @@ return {
       css = { "prettierd" },
       html = { "prettierd" },
       vue = { "prettierd" },
+      dart = { "dart_format" },
       -- Add other formats you want prettierd to handle
     },
 
@@ -34,6 +36,15 @@ return {
       html = { "eslint_d" },
       vue = { "eslint_d" },
       -- You can also add additional languages as necessary
+    },
+
+    -- own formatter options
+    formatters = {
+      dart_format = {
+        command = "fvm",
+        args = { "dart", "format", "$FILENAME" },
+        stdin = false,
+      },
     },
   },
 }
