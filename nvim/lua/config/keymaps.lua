@@ -12,3 +12,5 @@ vim.keymap.set("n", "8", ":BufferLineGoToBuffer 8<CR>", { noremap = true, silent
 vim.keymap.set("n", "9", ":BufferLineGoToBuffer 9<CR>", { noremap = true, silent = true })
 vim.keymap.set("i", "qq", "<Esc>", { noremap = true, silent = true, desc = "Escape insert mode" })
 vim.keymap.set("v", "qq", "<Esc>", { noremap = true, silent = true, desc = "Escape visual mode" })
+vim.keymap.set("n", "<leader>gd", "<cmd>DiffviewOpen<cr>", { desc = "Open Diffview" })
+vim.keymap.set("n", "<leader>gq", "<cmd>DiffviewClose<cr>", { desc = "Close Diffview" })
