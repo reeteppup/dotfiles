@@ -20,9 +20,9 @@ require("lazy").setup({
       "LazyVim/LazyVim",
       import = "lazyvim.plugins",
       opts = {
-        -- extras = {
-        --   "lazyvim.plugins.extras.lsp.none-ls", -- Enable none-ls.nvim support
-        -- },
+        extras = {
+          "lazyvim.plugins.extras.lsp.none-ls", -- Enable none-ls.nvim support
+        },
         colorscheme = "vscode",
       },
     },
