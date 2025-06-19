@@ -13,3 +13,7 @@ vim.keymap.set("n", "9", ":BufferLineGoToBuffer 9<CR>", { noremap = true, silent
 vim.keymap.set({ "i", "n", "s", "v" }, "qq", "<Esc>", { noremap = true, silent = true, desc = "Escape insert mode" })
 vim.keymap.set("n", "<leader>gd", "<cmd>DiffviewOpen<cr>", { desc = "Open Diffview" })
 vim.keymap.set("n", "<leader>gq", "<cmd>DiffviewClose<cr>", { desc = "Close Diffview" })
+vim.keymap.set({ "n", "v" }, "d", '"_d', { noremap = true, silent = true })
+vim.keymap.set({ "n", "v" }, "D", '"_D', { noremap = true, silent = true })
+vim.keymap.set({ "n", "v" }, "x", '"_x', { noremap = true, silent = true })
+vim.keymap.set({ "n", "v" }, "c", '"_c', { noremap = true, silent = true })
