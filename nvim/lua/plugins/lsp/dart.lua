@@ -33,24 +33,4 @@ return {
       })
     end,
   },
-  {
-    "mfussenegger/nvim-dap",
-    config = function()
-      local dap = require("dap")
-      dap.adapters.dart = {
-        type = "executable",
-        command = "flutter",
-        args = { "debug_adapter" },
-      }
-      dap.configurations.dart = {
-        {
-          type = "dart",
-          request = "launch",
-          name = "launch dart program",
-          program = "${file}",
-          cwd = "${workspacefolder}",
-        },
-      }
-    end,
-  },
 }
